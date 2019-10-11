@@ -1,5 +1,5 @@
 // ORIGINAL EXAMPLE AND ALGORITHM EXTRACTED FROM CORMEN'S BOOK
-// INTRODUCT TO ALGORITHMS
+// INTRODUCTION TO ALGORITHMS
 //------------------------|
 //  r -- s      t - -u    |
 //  |    |    / |   / |   |
