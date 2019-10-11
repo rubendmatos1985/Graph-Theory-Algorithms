@@ -44,7 +44,6 @@ let BFS = (G, s) =>{
       u.color = "black";
     
   }
-  G.V = [s, ...G.V]
 }
 
 BFS(graph, { value: "s", color: "gray", distance: 0, parent: null })
