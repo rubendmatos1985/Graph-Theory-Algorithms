@@ -1,0 +1,57 @@
+// ORIGINAL ALGORITHM FROM CORMEN'S BOOK
+// INTRODUCTION TO ALGORITHMS
+
+let time;
+
+const graph = {
+  V: ["u", "v", "w", "x", "y", "z"].map( 
+    v =>({ value: v, color: "white", parent: null, distance: 0})),
+  Adj: {
+    u: [1,3],
+    v: [4],
+    w: [4,5],
+    x:[1],
+    y:[3],
+    z:[5]
+    
+  }
+}
+
+const DFS = (g)=>
+{
+  time = 0;
+  g.V.forEach(
+   u => 
+    {
+     if(u.color == "white")
+     {
+        DFS_Visit(g, u);    
+     }
+   }
+  )
+}
+
+const DFS_Visit = (g, u)=>
+{
+  time = time + 1;
+  u.distance = time;
+  u.color = "gray"
+  g.Adj[u.value].forEach(
+    index => 
+    {
+      let v = g.V[index];
+      if(v.color == "white")
+        {
+          v.parent = u;
+          DFS_Visit(g, v)
+        }
+    }
+  )
+  u.color = "black"
+  time = time + 1;
+  u.f = time;
+}
+
+DFS(graph);
+
+console.log(graph);
